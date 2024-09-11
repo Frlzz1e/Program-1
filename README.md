@@ -1,2 +1,4 @@
-hello world
-oaunsuosnfonon
+#inlcude <iostream>
+ using namespace std
+
+ 
