@@ -3,20 +3,22 @@
 #include <iostream>
 using namespace std;
 
-struct Pet{
-    string type;
-    string name;
-    int age;
+class Pet{
+    public:
+        string type;
+        string name;
+        int age;
 };
-struct Procedures{
-    
-    string name;
-    string procedureName;
+class Procedures{
+    public:
+        string name;
+        string procedureName;
 };
 
-struct Bills{
-    string name;
-    double dollars;
+class Bills{
+    public:
+        string name;
+        double dollars;
 };
 
 Pet* createAPet(string type, string name, int age);
