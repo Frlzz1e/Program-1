@@ -11,7 +11,7 @@ struct Pet{
 struct Procedures{
     
     string name;
-    string procedure;
+    string procedureName;
 };
 
 struct Bills{
@@ -107,7 +107,7 @@ Procedures* addProcedure(Pet* vetPets, string procede){
     Procedures* newProcedure = new Procedures;
     
     newProcedure -> name = vetPets -> name;
-    newProcedure -> procedure = procede;
+    newProcedure -> procedureName = procede;
 
     return newProcedure;
 }
@@ -115,5 +115,5 @@ Procedures* addProcedure(Pet* vetPets, string procede){
 void printProcedures(Procedures* myProcedures){
 
     cout << myProcedures -> name << ": " ;
-    cout << myProcedures -> procedure;
+    cout << myProcedures -> procedureName;
 }
