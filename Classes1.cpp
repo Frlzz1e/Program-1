@@ -43,7 +43,7 @@ int main(){
     int numProcedures;
     int count;
 
-    cout << "how many new pets? ";
+    cout << "How many new pets? ";
     cin >> numPets;
    
     vetPets = new Pet* [numPets];
@@ -54,8 +54,9 @@ int main(){
         cin >> type;
         cout <<"name? ";
         cin >> name;
-        cout <<"age? ";
+        cout << name << "'s age";
         cin >> age;
+        cin.ignore();
         
         vetPets[i] = createAPet(type, name, age);
     }
