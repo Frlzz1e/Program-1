@@ -8,6 +8,7 @@ class Pet{
         string type;
         string name;
         int age;
+        double total;
 };
 class Procedures{
     public:
@@ -19,6 +20,26 @@ class Bills{
     public:
         string name;
         double dollars;
+};
+class Check{
+    public:
+    string prodNameC;
+    double prodPriceC;
+};
+class Groom{
+    public:
+    string prodNameG;
+    double prodPriceG;
+};
+class Surge{
+    public:
+    string prodNameS;
+    double prodPriceS;
+};
+class YearlyS{
+    public:
+    string prodNameY;
+    string prodPriceY;
 };
 
 Pet* createAPet(string type, string name, int age);
