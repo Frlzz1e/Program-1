@@ -1,7 +1,7 @@
-#ifndef Lab5Storage_H
-#define Lab5Storage_H
+#ifndef LabStorage_H
+#define LabStorage_H
 
-#include "Lab5Pet.h"
+#include "LabPet.h"
 using namespace std;
 
 class PetStorage{           //storage class 

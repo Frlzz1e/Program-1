@@ -1,9 +1,9 @@
-#ifndef Lab5PDescription_H
-#define Lab5Description_H
+#ifndef LabDescription_H
+#define LabDescription_H
 #include <iostream>
 #include <ctime>
-#include "Lab5Pet.h"
-#include "Lab5Storage.h"
+#include "LabPet.h"
+#include "LabStorage.h"
 using namespace std;
 
 class Description{

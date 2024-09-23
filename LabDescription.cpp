@@ -1,6 +1,6 @@
-#include "Lab5Description.h"
-#include "Lab5Pet.h"
-#include "Lab5Storage.h"
+#include "LabDescription.h"
+#include "LabPet.h"
+#include "LabStorage.h"
 #include <iostream>
 int randomDescription = (rand() % 3) +1;
 

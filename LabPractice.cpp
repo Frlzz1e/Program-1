@@ -1,8 +1,7 @@
 #include <iostream>
 #include <fstream>
-#include "LabPractice5.h"
-#include "Lab5Storage.h"
-#include "Lab5Description.h"
+#include "LabStorage.h"
+#include "LabDescription.h"
 
 
 using namespace std;

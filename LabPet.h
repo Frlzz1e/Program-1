@@ -1,5 +1,5 @@
-#ifndef Lab5Pet_H
-#define Lab5Pet_H
+#ifndef LabPet_H
+#define LabPet_H
 #include <iostream>
 using namespace std;
 

@@ -1,5 +1,5 @@
-#include "Lab5Pet.h"
-#include "Lab5Storage.h"
+#include "LabPet.h"
+#include "LabStorage.h"
 
 char delimiter = ',';
 
