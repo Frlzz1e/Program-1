@@ -1,6 +1,6 @@
 #include "LabPet.h"
 #include "LabStorage.h"
-
+#include <fstream>
 char delimiter = ',';
 
 void printPets(PetStorage *myPetsStorage, int count){
@@ -23,4 +23,43 @@ string stringParser(string testString){
 string clipChunk(string testString, string chunk){
     testString.erase(0, chunk.length() +1);
     return testString;
+}
+void dogfile(string type, string name, string age, PetStorage* myPetsStorage)
+{
+Pet* tempPet;
+string testString;
+int pos = 0;
+char delimiter = ',';
+int count = 0;
+
+ifstream file("VetPetInfo.txt");
+
+    file >> testString;
+    while ((pos = testString.find(delimiter)) != std::string::npos) {
+
+    int typeEnd = testString.find(delimiter);
+    type = testString.substr(0, typeEnd);
+    testString.erase(0, typeEnd +1);
+
+    int nameEnd = testString.find(delimiter);
+    name = testString.substr(0,nameEnd);
+    testString.erase(0, nameEnd+1);
+
+    int ageEnd = testString.find(delimiter);
+    age = testString.substr(0,ageEnd);
+    testString.erase(0, ageEnd+1);
+
+    count += 1;
+
+    tempPet = new Pet(type, name, age);
+    myPetsStorage -> myPets[count] = tempPet;
+}
+
+for(int x=0; x <= count; x++){
+    if(x==0){
+        cout << "List of Pets: \n";
+    }
+    printPets(myPetsStorage, x);
+
+}
 }

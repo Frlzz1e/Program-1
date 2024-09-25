@@ -19,4 +19,5 @@ void printPets(PetStorage *myPetsStorage, int count);
 void printChoicePet(PetStorage *myPetsStorage, int choice);
 string stringParser(string testString);
 string clipChunk(string testString, string chunk);
+void dogfile(string type, string name, string age, PetStorage* myPetsStorage);
 #endif
