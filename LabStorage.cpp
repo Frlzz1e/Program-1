@@ -62,9 +62,11 @@ return count;
 
 void addNewPet(PetStorage* myPetsStorage, int count, string type , string name, string age)
 {
+
 Pet* tempPet;
 ofstream outputFile;
-string fileName;
+string fileName;\
+int cnt = count+1;
 fileName = "VetPetInfo.txt";
 
     cout << "Pets type: \n";
@@ -78,7 +80,7 @@ fileName = "VetPetInfo.txt";
     cin.ignore();
     
     tempPet = new Pet(type, name, age);
-    myPetsStorage -> myPets[count] = tempPet;
+    myPetsStorage -> myPets[cnt] = tempPet;
 
 //Open the file
 outputFile.open(fileName);
