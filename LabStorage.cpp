@@ -24,13 +24,14 @@ string clipChunk(string testString, string chunk){
     testString.erase(0, chunk.length() +1);
     return testString;
 }
-void dogfile(string type, string name, string age, PetStorage* myPetsStorage)
+int dogfile(string type, string name, string age, PetStorage* myPetsStorage)
 {
 Pet* tempPet;
 string testString;
 int pos = 0;
 char delimiter = ',';
 int count = 0;
+ifstream file;
 
 ifstream file("VetPetInfo.txt");
 
@@ -54,12 +55,8 @@ ifstream file("VetPetInfo.txt");
     tempPet = new Pet(type, name, age);
     myPetsStorage -> myPets[count] = tempPet;
 }
+file.close();
 
-for(int x=0; x <= count; x++){
-    if(x==0){
-        cout << "List of Pets: \n";
-    }
-    printPets(myPetsStorage, x);
+return count;
 
-}
 }

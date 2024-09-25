@@ -22,7 +22,9 @@ int main(){
     Pet* tempPet;
     PetStorage* myPetsStorage = new PetStorage();
 
-dogfile(type, name, age , myPetsStorage);
+count = dogfile(type, name, age , myPetsStorage);
+
+
 
 cout << "Which pet would you like to interact with? ";
 cin >> choice;
