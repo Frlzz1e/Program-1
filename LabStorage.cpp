@@ -31,7 +31,6 @@ string testString;
 int pos = 0;
 char delimiter = ',';
 int count = 0;
-ifstream file;
 
 ifstream file("VetPetInfo.txt");
 
