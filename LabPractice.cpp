@@ -29,12 +29,13 @@ do
     {
         cout << "\n\nWelcome to our Veterinary Office! What would you like to do today?" << endl;
         cout << "1. View the Pets in the Kennel" << endl;
-        cout << "2. Leave the Clinc" << endl;
+        cout << "2. Add a Pet to the Kennel" << endl;
+        cout << "3. Leave the Clinc" << endl;
         cin >> menuChoice;
 
-        while (menuChoice < 1 || menuChoice > 2)
+        while (menuChoice < 1 || menuChoice > 3)
         {
-            cout << "\nOops you entered an invalid choice! Please enter 1 or 2!" << endl;
+            cout << "\nOops you entered an invalid choice! Please enter 1, 2, or 3!" << endl;
             cin >> menuChoice;
         }
         switch (menuChoice)
@@ -57,9 +58,13 @@ do
             break;
 
             case 2:
+            // Call function here
+            break;
+
+            case 3:
                 cout << "\nHave a fantastic day!" << endl;
                 return 0;
             break;
         }
-    } while (menuChoice != 2);
+    } while (menuChoice != 3);
 }
