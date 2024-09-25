@@ -58,7 +58,7 @@ do
             break;
 
             case 2:
-            addNewPet(myPetsStorage, count, type, name, age);
+            count = addNewPet(myPetsStorage, count, type, name, age);
             break;
 
             case 3:

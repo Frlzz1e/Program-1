@@ -60,38 +60,44 @@ return count;
 
 }
 
-void addNewPet(PetStorage* myPetsStorage, int count, string type , string name, string age)
+int addNewPet(PetStorage* myPetsStorage, int count, string type , string name, string age)
 {
-Pet* tempPet;
+Pet* newtempPet;
 ofstream outputFile;
 string fileName;
 fileName = "VetPetInfo.txt";
 
     cout << "Pets type: \n";
+    cin.ignore();
     getline(cin, type);
     cout << "Pets name: \n";
     getline(cin, name);
     cout << "Pets age: \n";
     getline(cin, age);
     
-    tempPet = new Pet(type, name, age);
-    myPetsStorage -> myPets[count] = tempPet;
+    newtempPet = new Pet(type, name, age);
+    myPetsStorage -> myPets[count+1] = newtempPet;
+
+    count ++;
+
+    return count;
+}
 
 //Open the file
-outputFile.open(fileName);
+// outputFile.open(fileName);
 
-    if (outputFile.is_open())
-    {
-        for(int i=0; i<count; i++)
-        {
-            outputFile << myPetsStorage -> myPets[count] << ",";
-        }
+//     if (outputFile.is_open())
+//     {
+//         for(int i=0; i<count; i++)
+//         {
+//             outputFile << myPetsStorage -> myPets[count] << ",";
+//         }
 
-        cout << "New animal saved." << endl << endl;
+//         cout << "New animal saved." << endl << endl;
 
-        outputFile.close();
-    }
+//         outputFile.close();
+//     }
 
-    else cout << "File could not open";
+//     else cout << "File could not open";
 
-}
+// }
