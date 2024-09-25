@@ -69,10 +69,13 @@ fileName = "VetPetInfo.txt";
 
     cout << "Pets type: \n";
     getline(cin, type);
+    cin.ignore();
     cout << "Pets name: \n";
     getline(cin, name);
+    cin.ignore();
     cout << "Pets age: \n";
     getline(cin, age);
+    cin.ignore();
     
     tempPet = new Pet(type, name, age);
     myPetsStorage -> myPets[count] = tempPet;
