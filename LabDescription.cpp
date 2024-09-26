@@ -21,7 +21,7 @@ void displayPetDescription(int descriptionChoice, int randomDescription, PetStor
             cout << tempPetName << " has no friends. \n";
             break;
         case 3:
-            cout << tempPetName << " is a " << tempPetAge << " year old " << tempPetType << ". \n ";
+            cout << tempPetName << " is a " << tempPetAge << " year old " << tempPetType << ". \n";
             cout << tempPetName << " is very goofy. \n";
             cout << tempPetName << " is a staff favorite. \n";
             break;
