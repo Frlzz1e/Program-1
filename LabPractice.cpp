@@ -3,26 +3,26 @@
 #include "LabStorage.h"
 #include "LabDescription.h"
 
-
 using namespace std;
 
 const int CAPACITY = 25;
 
-int main(){
+int main()
+{
     srand(time(0));
     int pos = 0;
     int count = 0;
     int choice;
     int menuChoice;
-    int randomDescription = (rand() % 3) +1;
+    int randomDescription = (rand() % 3) + 1;
     string type;
     string name;
     string age;
-    PetStorage* myPetsStorage = new PetStorage();
+    PetStorage *myPetsStorage = new PetStorage();
 
-count = dogfile(type, name, age , myPetsStorage);
+    count = dogfile(type, name, age, myPetsStorage);
 
-do
+    do
     {
         cout << "\n\nWelcome to our Veterinary Office! What would you like to do today?" << endl;
         cout << "1. View the Pets in the Kennel" << endl;
@@ -37,10 +37,10 @@ do
         }
         switch (menuChoice)
         {
-            case 1:
-            for(int x=0; x <= count; x++)
+        case 1:
+            for (int x = 0; x <= count; x++)
             {
-                if(x==0)
+                if (x == 0)
                 {
                     cout << "\nList of Pets: \n";
                 }
@@ -49,18 +49,18 @@ do
 
             cout << "\nWhich pet would you like to interact with? " << endl;
             cin >> choice;
-            printChoicePet(myPetsStorage, choice-1);
-
-            displayPetDescription(choice -1,randomDescription, myPetsStorage);
+            printChoicePet(myPetsStorage, choice - 1);
+            randomDescription = (rand() % 3) + 1;
+            displayPetDescription(choice - 1, randomDescription, myPetsStorage);
             break;
 
-            case 2:
+        case 2:
             count = addNewPet(myPetsStorage, count, type, name, age);
             break;
 
-            case 3:
-                cout << "\nHave a fantastic day!" << endl;
-                return 0;
+        case 3:
+            cout << "\nHave a fantastic day!" << endl;
+            return 0;
             break;
         }
     } while (menuChoice != 3);
