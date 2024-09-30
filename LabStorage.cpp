@@ -34,10 +34,15 @@ void setInfo(PetStorage *myPetsStorage, int count){
     cout << "Select a Pet: \n";
     cin >> choice;
 
+    cout << "\nWould you like to update the pet's name or age?" << endl;
     cout << "1: Update Pet's Name \n";
     cout << "2: Update Pet's Age\n";
     cin >> option;
-
+    while (option < 1 || option > 2)
+    {
+        cout << "\n\nOpps! Please enter 1 or 2!" << endl;
+        cin >> option;
+    }
     switch(option){
         case 1:
             cout << "Enter updated name: ";
