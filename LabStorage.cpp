@@ -46,12 +46,13 @@ void setInfo(PetStorage *myPetsStorage, int count){
     switch(option){
         case 1:
             cout << "Enter updated name: ";
-            cin >> updatedName;
+            getline(cin, updatedName);
             myPetsStorage -> myPets[choice-1] -> setName(updatedName);
             break;
         case 2:
             cout << "Enter updated age: ";
             cin >> updatedAge;
+            cin.ignore();
             myPetsStorage -> myPets[choice-1] -> setAge(updatedAge);
             break;
         default:
