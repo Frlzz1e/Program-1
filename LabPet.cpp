@@ -1,4 +1,5 @@
 #include "LabPet.h"
+#include "LabStorage.h"
 using namespace std;
 
 
@@ -10,4 +11,10 @@ string Pet::getType(){
 }
 string Pet::getAge(){
     return age;
+}
+void Pet::setName(string updatedName){
+     name = updatedName;
+}
+void Pet::setAge(string updatedAge){
+    age = updatedAge;
 }
