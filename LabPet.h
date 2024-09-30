@@ -23,6 +23,8 @@ class Pet{          //data class
         string getName();
         string getType();
         string getAge();
+        void setName(string updatedName);
+        void setAge(string updatedAge);
 
 };
 #endif

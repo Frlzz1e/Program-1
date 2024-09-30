@@ -17,8 +17,7 @@ class PetStorage{           //storage class
 };
 void printPets(PetStorage *myPetsStorage, int count);
 void printChoicePet(PetStorage *myPetsStorage, int choice);
-string stringParser(string testString);
-string clipChunk(string testString, string chunk);
+void setInfo(PetStorage *myPetsStorage, int count);
 int dogfile(string type, string name, string age, PetStorage* myPetsStorage);
 int addNewPet(PetStorage* myPetsStorage, int count, string type, string name, string age);
 #endif

@@ -7,6 +7,7 @@ void printPets(PetStorage *myPetsStorage, int count){
     string tempPetName = myPetsStorage -> myPets[count] -> getName();
     cout << count+1 << "." << tempPetName << endl;
 }
+
 void printChoicePet(PetStorage *myPetsStorage, int choice){
     string tempPetType = myPetsStorage -> myPets[choice] -> getType();
     string tempPetName = myPetsStorage -> myPets[choice] -> getName();
@@ -15,15 +16,45 @@ void printChoicePet(PetStorage *myPetsStorage, int choice){
     cout  << "Name: " << tempPetName << endl;
     cout  << "Age: " << tempPetAge << endl;
 }
-string stringParser(string testString){
-    int typeEnd = testString.find(delimiter);
-    string chunk = testString.substr(0, typeEnd);
-    return chunk;
+
+void setInfo(PetStorage *myPetsStorage, int count){
+    int choice;
+    int option;
+
+    string updatedName;
+    string updatedAge;
+        for(int x=0; x <= count; x++){
+            if(x==0)
+            {
+                cout << "*****************************";
+                cout << "\nList of Pets: \n";
+            }
+            printPets(myPetsStorage, x);
+        }
+    cout << "Select a Pet: \n";
+    cin >> choice;
+
+    cout << "1: Update Pet's Name \n";
+    cout << "2: Update Pet's Age\n";
+    cin >> option;
+
+    switch(option){
+        case 1:
+            cout << "Enter updated name: ";
+            cin >> updatedName;
+            myPetsStorage -> myPets[choice-1] -> setName(updatedName);
+            break;
+        case 2:
+            cout << "Enter updated age: ";
+            cin >> updatedAge;
+            myPetsStorage -> myPets[choice-1] -> setAge(updatedAge);
+            break;
+        default:
+            break;
+    }
+
 }
-string clipChunk(string testString, string chunk){
-    testString.erase(0, chunk.length() +1);
-    return testString;
-}
+
 int dogfile(string type, string name, string age, PetStorage* myPetsStorage){
     Pet* tempPet;
     string testString;
