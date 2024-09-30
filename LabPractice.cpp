@@ -62,18 +62,14 @@ int main()
             break;
 
         case 3:
+            setInfo(myPetsStorage, count);
+            break;
+
+        case 4:
             cout << "\nHave a fantastic day!" << endl;
             return 0;
-            case 3:
-                
-                setInfo(myPetsStorage, count);
-                
-
-                break;
-            case 4:
-                cout << "\nHave a fantastic day!" << endl;
-                return 0;
             break;
+            
         }
     } while (menuChoice != 4);
 }
