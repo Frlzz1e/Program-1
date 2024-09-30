@@ -14,13 +14,10 @@ int main(){
     int count = 0;
     int choice;
     int menuChoice;
-    char delimiter = ',';
     int randomDescription = (rand() % 3) +1;
-    string testString;
     string type;
     string name;
     string age;
-    Pet* tempPet;
     PetStorage* myPetsStorage = new PetStorage();
 
 count = dogfile(type, name, age , myPetsStorage);
