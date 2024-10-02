@@ -10,20 +10,20 @@ class Pet{          //data class
         string name;
 
     public:
-        Pet(){
+        Pet(){                  // default constructor
             type = "dog";
             name = "doggo";
             age = "5";
         }
-        Pet(string givenType, string givenName, string givenAge){
+        Pet(string givenType, string givenName, string givenAge){       // constructor
             type = givenType;
             name = givenName; 
             age = givenAge;
         }
-        string getName();
+        string getName();       // these are the getters
         string getType();
         string getAge();
-        void setName(string updatedName);
+        void setName(string updatedName);           // these are the setters
         void setAge(string updatedAge);
 
 };

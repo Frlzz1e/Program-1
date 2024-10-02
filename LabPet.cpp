@@ -3,7 +3,7 @@
 using namespace std;
 
 
-string Pet::getName(){
+string Pet::getName(){              // getter definitions
     return name;
 }
 string Pet::getType(){
@@ -12,7 +12,7 @@ string Pet::getType(){
 string Pet::getAge(){
     return age;
 }
-void Pet::setName(string updatedName){
+void Pet::setName(string updatedName){          // setter definitions
      name = updatedName;
 }
 void Pet::setAge(string updatedAge){

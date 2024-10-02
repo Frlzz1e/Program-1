@@ -10,6 +10,6 @@ class Description{
     int descriptionChoice;
     int randDescription;
 };
-void displayPetDescription(int descriptionChoice, int randDescrition, PetStorage *myPetsStorage);
+void displayPetDescription(int descriptionChoice, int randDescrition, PetStorage *myPetsStorage);       // this is our other class that prints a description for a selected pet
 
 #endif

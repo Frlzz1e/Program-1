@@ -4,7 +4,7 @@
 #include <iostream>
 
 
-void displayPetDescription(int descriptionChoice, int randomDescription, PetStorage *myPetsStorage ){
+void displayPetDescription(int descriptionChoice, int randomDescription, PetStorage *myPetsStorage ){       // other class definition 
     string tempPetType = myPetsStorage -> myPets[descriptionChoice] -> getType();
     string tempPetName = myPetsStorage -> myPets[descriptionChoice] -> getName();
     string tempPetAge = myPetsStorage -> myPets[descriptionChoice] -> getAge();

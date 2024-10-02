@@ -6,22 +6,18 @@
 
 using namespace std;
 
-const int CAPACITY = 25;
+
 
 int main()
 {
     srand(time(0));
-    int pos = 0;
     int count = 0;
     int choice;
     int menuChoice;
     int randomDescription = (rand() % 3) + 1;
-    string type;
-    string name;
-    string age;
     PetStorage *myPetsStorage = new PetStorage();
 
-    count = dogfile(type, name, age, myPetsStorage);
+    count = dogfile(myPetsStorage);
 
     do
     {
@@ -36,6 +32,7 @@ int main()
         {
             if (cin.fail())
             {
+
                 cout << "\nOops! please enter a number" << endl;
                 cin.clear();
                 cin.ignore();
@@ -70,7 +67,7 @@ int main()
                 printPets(myPetsStorage, x);
             }
 
-            cout << "\nWhich pet would you like to interact with? " << endl;
+            cout << "\nEnter number of the pet you wish to interact with: ";
             cin >> choice;
             
             while(choice < 1 || choice > count+1 || cin.fail())
@@ -90,14 +87,13 @@ int main()
                     cin >> choice;
                 }
             }
-
             printChoicePet(myPetsStorage, choice - 1);
             randomDescription = (rand() % 3) + 1;
             displayPetDescription(choice - 1, randomDescription, myPetsStorage);
             break;
 
         case 2:
-            count = addNewPet(myPetsStorage, count, type, name, age);
+            count = addNewPet(myPetsStorage, count);
             break;
 
         case 3:
@@ -106,6 +102,7 @@ int main()
 
         case 4:
             cout << "\nHave a fantastic day!" << endl;
+            delete myPetsStorage;       // memory management
             return 0;
             break;
             

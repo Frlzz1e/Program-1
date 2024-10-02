@@ -3,11 +3,12 @@
 #include <fstream>
 char delimiter = ',';
 
+// function to print array of pets ((uses getters))
 void printPets(PetStorage *myPetsStorage, int count){
     string tempPetName = myPetsStorage -> myPets[count] -> getName();
     cout << count+1 << "." << tempPetName << endl;
 }
-
+// function to pick a selected pet from array ((uses getters))
 void printChoicePet(PetStorage *myPetsStorage, int choice){
     string tempPetType = myPetsStorage -> myPets[choice] -> getType();
     string tempPetName = myPetsStorage -> myPets[choice] -> getName();
@@ -16,7 +17,7 @@ void printChoicePet(PetStorage *myPetsStorage, int choice){
     cout  << "Name: " << tempPetName << endl;
     cout  << "Age: " << tempPetAge << endl;
 }
-
+//function to use adjust a pet's info ((uses setters))
 void setInfo(PetStorage *myPetsStorage, int count){
     int choice;
     int option;
@@ -31,12 +32,18 @@ void setInfo(PetStorage *myPetsStorage, int count){
             }
             printPets(myPetsStorage, x);
         }
-    cout << "Select a Pet: \n";
+    cout << "\nSelect a Pet: ";
     cin >> choice;
-
+    while(choice <1 || choice > count+1 || cin.fail() ){
+        cin.clear();
+        cin.ignore();
+        cout << "Please enter a number between 1 and " << count+1 << endl;
+        cin >> choice;
+    }
     cout << "\nWould you like to update the pet's name or age?" << endl;
     cout << "1: Update Pet's Name \n";
     cout << "2: Update Pet's Age\n";
+    cout << "Enter Choice: ";
     cin >> option;
     while (option < 1 || option > 2 || cin.fail())
     {
@@ -62,7 +69,7 @@ void setInfo(PetStorage *myPetsStorage, int count){
     switch(option){
         case 1:
             cout << "Enter updated name: ";
-            getline(cin, updatedName);
+            cin >> updatedName;
             myPetsStorage -> myPets[choice-1] -> setName(updatedName);
             break;
         case 2:
@@ -74,12 +81,14 @@ void setInfo(PetStorage *myPetsStorage, int count){
         default:
             break;
     }
-
 }
-
-int dogfile(string type, string name, string age, PetStorage* myPetsStorage){
+// Function reads in information from a text file and uses a constructor to create a pet object that is sent to an array
+int dogfile(PetStorage* myPetsStorage){
     Pet* tempPet;
     string testString;
+    string type; 
+    string age; 
+    string name;
     int pos = 0;
     char delimiter = ',';
     int count = 0;
@@ -109,20 +118,20 @@ int dogfile(string type, string name, string age, PetStorage* myPetsStorage){
     file.close();
     return count;
 }
-
-int addNewPet(PetStorage* myPetsStorage, int count, string type , string name, string age)
+// function to add a new pet after text file has been read in
+int addNewPet(PetStorage* myPetsStorage, int count)
 {
 Pet* newtempPet;
-ofstream outputFile;
-string fileName;
-fileName = "VetPetInfo.txt";
+string type;
+string name;
+string age;
 
-    cout << "Pets type: \n";
+    cout << "Pets type: ";
     cin.ignore();
     getline(cin, type);
-    cout << "Pets name: \n";
+    cout << "Pets name: ";
     getline(cin, name);
-    cout << "Pets age: \n";
+    cout << "Pets age: ";
     getline(cin, age);
     
     newtempPet = new Pet(type, name, age);
