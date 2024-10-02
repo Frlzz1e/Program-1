@@ -32,7 +32,7 @@ int main()
         cout << "4. Leave the Clinc" << endl;
         cin >> menuChoice;
 
-        while (menuChoice < 1 || menuChoice > 4)
+        while (menuChoice < 1 || menuChoice > 4 || cin.fail())
         {
             cout << "\nOops you entered an invalid choice! Please enter 1, 2, or 3!" << endl;
             cin >> menuChoice;
@@ -52,6 +52,14 @@ int main()
 
             cout << "\nWhich pet would you like to interact with? " << endl;
             cin >> choice;
+            
+            while(choice < 1 || choice > count+1 || cin.fail())
+            {
+                cout << "Please choose a valid input. \n";
+                cout << "\nWhich pet would you like to interact with? " << endl;
+                cin >> choice;
+            }
+
             printChoicePet(myPetsStorage, choice - 1);
             randomDescription = (rand() % 3) + 1;
             displayPetDescription(choice - 1, randomDescription, myPetsStorage);
