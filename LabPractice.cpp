@@ -34,8 +34,28 @@ int main()
 
         while (menuChoice < 1 || menuChoice > 4 || cin.fail())
         {
-            cout << "\nOops you entered an invalid choice! Please enter 1, 2, or 3!" << endl;
-            cin >> menuChoice;
+            if (cin.fail())
+            {
+                cout << "\nOops! please enter a number" << endl;
+                cin.clear();
+                cin.ignore();
+                cout << "\nWelcome to our Veterinary Office! What would you like to do today?" << endl;
+                cout << "1. View the Pets in the Kennel" << endl;
+                cout << "2. Add a Pet to the Kennel" << endl;
+                cout << "3. Update Pet Info" << endl;
+                cout << "4. Leave the Clinc" << endl;
+                cin >> menuChoice;
+            }
+            else
+            {
+                cout << "\nOops! you entered an invalid choice! Please enter 1, 2, or 3!" << endl;
+                cout << "\nWelcome to our Veterinary Office! What would you like to do today?" << endl;
+                cout << "1. View the Pets in the Kennel" << endl;
+                cout << "2. Add a Pet to the Kennel" << endl;
+                cout << "3. Update Pet Info" << endl;
+                cout << "4. Leave the Clinc" << endl;
+                cin >> menuChoice;
+            }
         }
         switch (menuChoice)
         {
@@ -55,9 +75,20 @@ int main()
             
             while(choice < 1 || choice > count+1 || cin.fail())
             {
-                cout << "Please choose a valid input. \n";
-                cout << "\nWhich pet would you like to interact with? " << endl;
-                cin >> choice;
+                if (cin.fail())
+                {
+                    cout << "\nOops! please enter a number" << endl;
+                    cin.clear();
+                    cin.ignore();
+                    cout << "Which pet would you like to interact with? " << endl;
+                    cin >> choice;
+                }
+                else
+                {
+                    cout << "Please choose a valid input. \n";
+                    cout << "Which pet would you like to interact with? " << endl;
+                    cin >> choice;
+                }
             }
 
             printChoicePet(myPetsStorage, choice - 1);

@@ -38,10 +38,26 @@ void setInfo(PetStorage *myPetsStorage, int count){
     cout << "1: Update Pet's Name \n";
     cout << "2: Update Pet's Age\n";
     cin >> option;
-    while (option < 1 || option > 2)
+    while (option < 1 || option > 2 || cin.fail())
     {
-        cout << "\n\nOpps! Please enter 1 or 2!" << endl;
-        cin >> option;
+        if (cin.fail())
+        {
+            cout << "\nOops! Please enter a number." << endl;
+            cin.clear();
+            cin.ignore();
+            cout << "\nWould you like to update the pet's name or age?" << endl;
+            cout << "1: Update Pet's Name \n";
+            cout << "2: Update Pet's Age\n";
+            cin >> option;
+        }
+        else
+        {
+            cout << "\nOpps! Please enter 1 or 2!" << endl;
+            cout << "\nWould you like to update the pet's name or age?" << endl;
+            cout << "1: Update Pet's Name \n";
+            cout << "2: Update Pet's Age\n";
+            cin >> option;
+        }
     }
     switch(option){
         case 1:
@@ -116,22 +132,3 @@ fileName = "VetPetInfo.txt";
 
     return count;
 }
-
-//Open the file
-// outputFile.open(fileName);
-
-//     if (outputFile.is_open())
-//     {
-//         for(int i=0; i<count; i++)
-//         {
-//             outputFile << myPetsStorage -> myPets[count] << ",";
-//         }
-
-//         cout << "New animal saved." << endl << endl;
-
-//         outputFile.close();
-//     }
-
-//     else cout << "File could not open";
-
-// }
