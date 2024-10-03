@@ -15,7 +15,7 @@ int main()
     int randomDescription = (rand() % 3) + 1;
     PetStorage *myPetsStorage = new PetStorage();
 
-    count = dogfile(myPetsStorage);
+    count = dogfile(myPetsStorage); // Reads in txt file and constructs pet object using constructor from data class(labpet) returns a count for # of pets
 
     do
     {

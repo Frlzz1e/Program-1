@@ -8,23 +8,23 @@ Target = main
 TARGET_DEL = main.exe
 
 
-SRCS = LabPractice.cpp LabStorage.cpp LabPet.cpp LabDescription.cpp 
-OBJS = LabStorage.obj LabPet.obj LabDescription.obj VetPets.obj
+SRCS = LabPractice.cpp LabStorage.cpp LabPet.cpp LabDescription.cpp VetPetInfo.txt
+OBJS = LabStorage.obj LabPet.obj LabDescription.obj 
 
 all: $(TARGET) run
 
 # Rule to link object files into the target executable
 $(TARGET): $(OBJS)
-    $(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
+	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
 
 # Rule to compile .cpp files into .o files
 %.o: %.cpp
-    $(CXX) $(CXXFLAGS) -c $< -o $@
+	$(CXX) $(CXXFLAGS) -c $< -o $@
 
 # Rule to run the executable
 run: $(TARGET)
-    $(TARGET)
+	$(TARGET)
 
 # Clean rule to remove generated files
 clean:
-    del $(TARGET_DEL) $(OBJS)
+	del $(TARGET_DEL) $(OBJS)
