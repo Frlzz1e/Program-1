@@ -4,8 +4,8 @@ override CXX_FLAGS += -c
 WARNINGS = -Wall -Wpedantic -Wextra
 TESTFILE = TestCase.txt
 
-Target = main
-TARGET_DEL = main.exe
+Target = LabExec				#Does not work
+TARGET_DEL = LabExec.exe
 
 
 SRCS = LabPractice.cpp LabStorage.cpp LabPet.cpp LabDescription.cpp VetPetInfo.txt
@@ -13,7 +13,7 @@ OBJS = LabStorage.obj LabPet.obj LabDescription.obj
 
 all: $(TARGET) run
 
-# Rule to link object files into the target executable
+# Rule to link object files into the target executable 
 $(TARGET): $(OBJS)
 	$(CXX) $(CXXFLAGS) -o $(TARGET) $(OBJS)
 
