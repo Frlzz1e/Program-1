@@ -1,3 +1,6 @@
+//Group members: William Ward, Nathan Lopp, Elliot Lovins, Bernie Friesel
+//Lab1
+//10/04/2024
 #include <iostream>
 #include <fstream>
 #include "LabStorage.h"
